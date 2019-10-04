@@ -1,0 +1,14 @@
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryService.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryService.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\obj\Debug\DictionaryService.csprojAssemblyReference.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\obj\Debug\DictionaryService.csproj.CoreCompileInputs.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\obj\Debug\DictionaryService.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\obj\Debug\DictionaryService.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryDto.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryEntities.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\EntityFramework.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryDto.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryEntities.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\DictionaryEntities.dll.config
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\bin\Debug\EntityFramework.xml
+D:\Back Up\Personal Project\MyDictionary\DictionaryService\obj\Debug\DictionaryService.csproj.CopyComplete

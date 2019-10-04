@@ -1,0 +1,16 @@
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\DictionaryEntities.dll.config
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\DictionaryEntities.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\DictionaryEntities.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\EntityFramework.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\EntityFramework.xml
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.csprojAssemblyReference.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.csproj.CoreCompileInputs.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.csproj.CopyComplete
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\DictionaryDto.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\bin\Debug\DictionaryDto.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.Migrations.Initdatabase.resources
+D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\obj\Debug\DictionaryEntities.csproj.GenerateResource.cache

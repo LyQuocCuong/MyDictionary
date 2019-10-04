@@ -1,0 +1,13 @@
+﻿
+
+@{ Html.RenderPartial("~/Views/Challenge/_ChallengeModal.cshtml"); }
+
+<script>
+    $(document).ready(function() {
+        $('#challengeModal').modal({
+            backdrop: 'static',
+            keyboard: false,
+            show: true,
+        })
+    });
+</script>

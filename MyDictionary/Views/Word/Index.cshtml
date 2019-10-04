@@ -1,0 +1,9 @@
+﻿@model DictionaryDto.WordDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Text <span>[@Model.Type]</span></h2>
+<h3>@Model.Pronounce</h3>
+@{ Html.RenderPartial("~/Views/Meaning/MeaningList.cshtml", Model.MeaningList); }

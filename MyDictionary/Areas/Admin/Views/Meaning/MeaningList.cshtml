@@ -1,0 +1,36 @@
+﻿@model List<DictionaryDto.MeaningDto>
+
+@{
+    if (Model.Count() > 0)
+    {
+        for (int index = 0; index < Model.Count(); index++)
+        {
+            <p style="overflow:auto">
+                <span>[M] @Model.ElementAt(index).MeaningText</span>
+                <div>
+                    <a href="/Admin/Meaning/Index?meaningId=@Model.ElementAt(index).MeaningId"
+                       target="_blank"
+                       class="btn btn-info"
+                       style="font-size: 12px;">
+                        Detail
+                    </a>
+                    <button class="btn btn-primary"
+                            name="btnMeaningModal"
+                            data-toggle="modal"
+                            data-target="#meaningModal"
+                            data-meaningmodel="@Json.Encode(Model.ElementAt(index))"
+                            style="font-size: 12px;">
+                        Edit
+                    </button>
+                    <a href="/Admin/Meaning/DeleteMeaning?meaningId=@Model.ElementAt(index).MeaningId"
+                       onclick="return confirm('Are you sure ?')"
+                       class="btn btn-danger"
+                       style="font-size: 12px;">
+                        Delete
+                    </a>
+                </div>
+            </p>
+            <hr />
+        }
+    }
+}

@@ -1,0 +1,65 @@
+﻿@model List<DictionaryDto.WordDto>
+
+<button class="btn btn-success"
+        name="btnWordModal"
+        data-toggle="modal"
+        data-target="#wordModal"
+        data-wordmodel="@Json.Encode(new DictionaryDto.WordDto())">
+    Add Word
+</button>
+@{
+    if (Model.Count > 0)
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:40%">Word</th>
+                    <th style="width:20%">Type</th>
+                    <th style="width:20%">Pronounce</th>
+                    <th style="width:20%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int index = 0; index < Model.Count; index++)
+                {
+                    <tr>
+                        <th class="text-body-table">@Model.ElementAt(index).Text</th>
+                        <th class="text-body-table">@Model.ElementAt(index).Type</th>
+                        <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
+                        <th>
+                            <a href="/Admin/Word/Index?wordId=@Model.ElementAt(index).WordId"
+                               target="_blank"
+                               class="btn btn-info">
+                                Detail
+                            </a>
+                            <button class="btn btn-primary"
+                                    name="btnWordModal"
+                                    data-toggle="modal"
+                                    data-target="#wordModal"
+                                    data-wordmodel="@Json.Encode(Model.ElementAt(index))">
+                                Edit
+                            </button>
+                            <a href="/Admin/Word/DeleteWord?wordId=@Model.ElementAt(index).WordId"
+                               onclick="return confirm('Are you sure ?')"
+                               class="btn btn-danger">
+                                Delete
+                            </a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@{ Html.RenderPartial("~/Areas/Admin/Views/Word/_WordModal.cshtml"); }
+
+<script>
+    $(document).on("click", "button[name='btnWordModal']", function () {
+        var wordModel = $(this).data('wordmodel');
+        $("#wordModal input[name='WordId']").val(wordModel.WordId);
+        $("#wordModal input[name='Text']").val(wordModel.Text);
+        $("#wordModal input[name='Type']").val(wordModel.Type);
+        $("#wordModal input[name='Pronounce']").val(wordModel.Pronounce);
+    });
+</script>

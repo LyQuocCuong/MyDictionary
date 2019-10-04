@@ -1,0 +1,39 @@
+﻿@model DictionaryDto.ChallengeDto
+<div>
+    <form id="newQuestion" action="/Challenge/CreateQuestion" method="post">
+        <a onclick="document.getElementById('newQuestion').submit();" class="btn btn-success">New Question</a>
+    </form>
+    <div>
+        <h2 style="text-align:center">@Model.QuestionText</h2>
+        <div>
+            @for (int index = 0; index < 4; index++)
+            {
+                <button onclick="checkAnswer(this, '@Model.AnswersList.ElementAt(index).AnswerId')" class="btn btn-lg btn-block btn-default">@Model.AnswersList.ElementAt(index).AnswerText</button>
+            }
+        </div>
+    </div>
+    <div style="overflow:auto">
+        <h4>Example:</h4>
+        @if (Model.ExampleList.Count() > 0)
+        {
+            <ul>
+                @for (int index = 0; index < Model.ExampleList.Count(); index++)
+                {
+                    <li>@Model.ExampleList.ElementAt(index).ExampleText</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+
+<script>
+    var rightAnswerId = '@Model.RightAnswerId';
+    function checkAnswer(e, answerId) {
+        if (rightAnswerId == answerId) {
+            e.className = "btn btn-lg btn-block btn-success";
+        } else {
+            e.className = "btn btn-lg btn-block btn-danger";
+        }
+    }
+</script>
+

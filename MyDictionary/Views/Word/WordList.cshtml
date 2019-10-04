@@ -1,0 +1,32 @@
+﻿@model List<DictionaryDto.WordDto>
+
+@{
+    <h2>WORD LIST</h2>
+    if (Model.Count > 0)
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:50%">Word</th>
+                    <th style="width:25%">Type</th>
+                    <th style="width:25%">Pronounce</th>
+                </tr>
+            </thead>
+            <tbody>
+               @for (int index = 0; index < Model.Count; index++)
+                {
+                <tr>
+                    <th class="text-body-table">
+                        <a href="/Word/Index?wordId=@Model.ElementAt(index).WordId"
+                           target="_blank">
+                            @Model.ElementAt(index).Text
+                        </a>
+                    </th>
+                    <th class="text-body-table">@Model.ElementAt(index).Type</th>
+                    <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

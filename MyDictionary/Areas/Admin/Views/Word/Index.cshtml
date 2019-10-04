@@ -1,0 +1,23 @@
+﻿@model DictionaryDto.WordDto
+
+<button class="btn btn-success"
+        name="btnMeaningModal"
+        data-toggle="modal"
+        data-target="#meaningModal"
+        data-meaningmodel="@Json.Encode(new DictionaryDto.MeaningDto() { WordId = Model.WordId })">
+    Add Meaning
+</button>
+<h2>@Model.Text <span>[@Model.Type]</span></h2>
+<h3>@Model.Pronounce</h3>
+@{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/MeaningList.cshtml", Model.MeaningList); }
+@{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/_MeaningModal.cshtml"); }
+
+<script>
+    $(document).on("click", "button[name='btnMeaningModal']", function () {
+        var model = $(this).data('meaningmodel');
+        $("#meaningModal input[name='WordId']").val(model.WordId);
+        $("#meaningModal input[name='MeaningId']").val(model.MeaningId);
+        $("#meaningModal textarea[name='MeaningText']").val(model.MeaningText);
+    });
+</script>
+

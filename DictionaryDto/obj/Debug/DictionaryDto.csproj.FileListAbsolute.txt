@@ -1,0 +1,6 @@
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\bin\Debug\DictionaryDto.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\bin\Debug\DictionaryDto.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\obj\Debug\DictionaryDto.csprojAssemblyReference.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\obj\Debug\DictionaryDto.csproj.CoreCompileInputs.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\obj\Debug\DictionaryDto.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryDto\obj\Debug\DictionaryDto.pdb
