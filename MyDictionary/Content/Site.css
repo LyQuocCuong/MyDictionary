@@ -1,12 +1,18 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #36393e;
+    color: #fff;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.modal-content {
+    background-color: #36393e;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -28,4 +34,8 @@
 
 table .btn {
     font-size: 12px !important;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #424549;
 }

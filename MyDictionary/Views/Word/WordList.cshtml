@@ -7,23 +7,28 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th style="width:50%">Word</th>
-                    <th style="width:25%">Type</th>
+                    <th style="width:40%">Word</th>
+                    <th style="width:10%">Type</th>
                     <th style="width:25%">Pronounce</th>
+                    <th style="width:20%">Sound</th>
+                    <th style="width:5%">Action</th>
                 </tr>
             </thead>
             <tbody>
                @for (int index = 0; index < Model.Count; index++)
                 {
                 <tr>
-                    <th class="text-body-table">
+                    <th class="text-body-table">@Model.ElementAt(index).WordText</th>
+                    <th class="text-body-table">@Model.ElementAt(index).TypeWordText</th>
+                    <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
+                    <th class="text-body-table">@Model.ElementAt(index).Sound</th>
+                    <th>
                         <a href="/Word/Index?wordId=@Model.ElementAt(index).WordId"
-                           target="_blank">
-                            @Model.ElementAt(index).Text
+                           target="_blank"
+                           class="btn btn-info">
+                            Detail
                         </a>
                     </th>
-                    <th class="text-body-table">@Model.ElementAt(index).Type</th>
-                    <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
                 </tr>
                 }
             </tbody>

@@ -4,7 +4,9 @@
         name="btnExampleModal"
         data-toggle="modal"
         data-target="#exampleModal"
-        data-examplemodel="@Json.Encode(new DictionaryDto.ExampleDto() { MeaningId = Model.MeaningId })">
+        data-examplemodel="@Json.Encode(new DictionaryDto.ExampleDto() { MeaningId = Model.MeaningId })"
+        data-backdrop="static"
+        data-keyboard="false">
     Add Example
 </button>
 <h2>@Model.MeaningText</h2>

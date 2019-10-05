@@ -4,11 +4,13 @@
         name="btnMeaningModal"
         data-toggle="modal"
         data-target="#meaningModal"
-        data-meaningmodel="@Json.Encode(new DictionaryDto.MeaningDto() { WordId = Model.WordId })">
+        data-meaningmodel="@Json.Encode(new DictionaryDto.MeaningDto() { WordId = Model.WordId })"
+        data-backdrop="static"
+        data-keyboard="false">
     Add Meaning
 </button>
-<h2>@Model.Text <span>[@Model.Type]</span></h2>
-<h3>@Model.Pronounce</h3>
+<h2>@Model.WordText <span>[@Model.TypeWordText]</span></h2>
+<h4>@Model.Pronounce</h4>
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/MeaningList.cshtml", Model.MeaningList); }
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/_MeaningModal.cshtml"); }
 

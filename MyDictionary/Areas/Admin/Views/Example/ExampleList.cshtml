@@ -6,13 +6,15 @@
         for (int index = 0; index < Model.Count(); index++)
         {
             <p style="overflow:auto">
-                <span>[E] @Model.ElementAt(index).ExampleText</span>
+                <span style="font-size:18px;">[E] @Html.Raw(Model.ElementAt(index).ExampleText)</span>
                 <div style="font-size:12px;">
                     <button class="btn btn-primary"
                             name="btnExampleModal"
                             data-toggle="modal"
                             data-target="#exampleModal"
-                            data-examplemodel="@Json.Encode(Model.ElementAt(index))">
+                            data-examplemodel="@Json.Encode(Model.ElementAt(index))"
+                            data-backdrop="static"
+                            data-keyboard="false">
                         Edit
                     </button>
                     <a href="/Admin/Example/DeleteExample?exampleId=@Model.ElementAt(index).ExampleId"

@@ -27,9 +27,11 @@ namespace DictionaryEntities.Repository
                     .Select(w => new WordDto()
                     {
                         WordId = w.ID,
-                        Text = w.TEXT,
-                        Type = w.TYPE,
+                        TypeWordId = w.TYPE_WORD_ID,
+                        WordText = w.TEXT,
+                        TypeWordText = w.TYPE_WORD.TYPE_TEXT,
                         Pronounce = w.PRONOUNCE,
+                        Sound = w.SOUND,
                     }));
             }
             return wordList;
@@ -42,9 +44,11 @@ namespace DictionaryEntities.Repository
             if (word != null)
             {
                 wordDto.WordId = wordId;
-                wordDto.Text = word.TEXT;
-                wordDto.Type = word.TYPE;
+                wordDto.WordText = word.TEXT;
+                wordDto.TypeWordId = word.TYPE_WORD_ID;
+                wordDto.TypeWordText = word.TYPE_WORD.TYPE_TEXT;
                 wordDto.Pronounce = word.PRONOUNCE;
+                wordDto.Sound = word.SOUND;
                 wordDto.MeaningList = Repository.MEANING.FindMeaningListHaveExample(wordId);
             }
             return wordDto;
@@ -56,9 +60,10 @@ namespace DictionaryEntities.Repository
             WORD newWord = new WORD()
             {
                 ID = wordDto.WordId,
-                TEXT = wordDto.Text,
-                TYPE = wordDto.Type,
+                TYPE_WORD_ID = wordDto.TypeWordId,
+                TEXT = wordDto.WordText,
                 PRONOUNCE = wordDto.Pronounce,
+                SOUND = wordDto.Sound,
             };
             DataSet.Add(newWord);
             Repository.SaveChanges();
@@ -69,9 +74,10 @@ namespace DictionaryEntities.Repository
             WORD word = DataSet.FirstOrDefault(w => w.ID == wordDto.WordId);
             if (word != null)
             {
-                word.TEXT = wordDto.Text;
-                word.TYPE = wordDto.Type;
+                word.TYPE_WORD_ID = wordDto.TypeWordId;
+                word.TEXT = wordDto.WordText;
                 word.PRONOUNCE = wordDto.Pronounce;
+                word.SOUND = wordDto.Sound;
                 Repository.SaveChanges();
             }
         }

@@ -53,10 +53,15 @@
     <Compile Include="Entity\Context\DictionaryContext.cs" />
     <Compile Include="Entity\Models\EXAMPLE.cs" />
     <Compile Include="Entity\Models\MEANING.cs" />
+    <Compile Include="Entity\Models\TYPE_WORD.cs" />
     <Compile Include="Entity\Models\WORD.cs" />
     <Compile Include="Migrations\201910010701292_Init-database.cs" />
     <Compile Include="Migrations\201910010701292_Init-database.Designer.cs">
       <DependentUpon>201910010701292_Init-database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050925472_Add-TypeWord-Table.cs" />
+    <Compile Include="Migrations\201910050925472_Add-TypeWord-Table.Designer.cs">
+      <DependentUpon>201910050925472_Add-TypeWord-Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,10 +80,17 @@
       <Project>{77d9ef65-3a1f-484a-a125-6b48f2949ce4}</Project>
       <Name>DictionaryDto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DictionaryHelper\DictionaryHelper.csproj">
+      <Project>{dbed81ca-47ce-4c8f-ab51-3b54834a3c81}</Project>
+      <Name>DictionaryHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910010701292_Init-database.resx">
       <DependentUpon>201910010701292_Init-database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050925472_Add-TypeWord-Table.resx">
+      <DependentUpon>201910050925472_Add-TypeWord-Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

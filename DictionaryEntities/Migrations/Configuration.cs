@@ -1,5 +1,7 @@
 namespace DictionaryEntities.Migrations
 {
+    using DictionaryEntities.Entity.Models;
+    using DictionaryHelper;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +28,13 @@ namespace DictionaryEntities.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            
+            //Init TypeWord data
+            foreach(TypeWordHelper typeWord in CommonVariable.Type_Word_List)
+            {
+                context.TYPE_WORD.AddOrUpdate(new TYPE_WORD { ID = typeWord.Id, TYPE_TEXT = typeWord.Text, DELETED = false });
+            }
+
         }
     }
 }

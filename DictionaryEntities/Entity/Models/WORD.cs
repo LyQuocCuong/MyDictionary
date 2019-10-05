@@ -17,13 +17,18 @@ namespace DictionaryEntities.Entity.Models
 
         public Guid ID { get; set; }
 
-        public string TEXT { get; set; }
+        public Guid TYPE_WORD_ID { get; set; }
 
-        public string TYPE { get; set; }
+        public string TEXT { get; set; }
 
         public string PRONOUNCE { get; set; }
 
+        public string SOUND { get; set; }
+
         public bool DELETED { get; set; }
+
+        [ForeignKey("TYPE_WORD_ID")]
+        public virtual TYPE_WORD TYPE_WORD { get; set; }
 
         public virtual ICollection<MEANING> MEANING_LIST { get; set; }
     }

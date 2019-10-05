@@ -1,4 +1,5 @@
-﻿<!-- Modal -->
+﻿@using DictionaryHelper
+<!-- Modal -->
 <div id="wordModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <form action="/Admin/Word/UpdateWord" method="post">
@@ -12,18 +13,23 @@
                     <input type="text" name="WordId" hidden />
                     <div class="row">
                         <div class="col-lg-4">
-                            <label for="Text">Text:</label>
+                            <label for="WordText">Text:</label>
                         </div>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" name="Text" />
+                            <input type="text" class="form-control" name="WordText" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
-                            <label for="Text">Type:</label>
+                            <label for="TypeWordId">Type:</label>
                         </div>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" name="Type" />
+                            <select class="form-control" id="TypeWordId" name="TypeWordId">
+                                @foreach (TypeWordHelper typeWord in CommonVariable.Type_Word_List)
+                                {
+                                    <option value="@typeWord.Id">@typeWord.Text</option>
+                                }
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -32,6 +38,14 @@
                         </div>
                         <div class="col-lg-8">
                             <input type="text" class="form-control" name="Pronounce" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="Text">Sound:</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Sound" />
                         </div>
                     </div>
                 </div>

@@ -221,6 +221,10 @@
       <Project>{77D9EF65-3A1F-484A-A125-6B48F2949CE4}</Project>
       <Name>DictionaryDto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DictionaryHelper\DictionaryHelper.csproj">
+      <Project>{dbed81ca-47ce-4c8f-ab51-3b54834a3c81}</Project>
+      <Name>DictionaryHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DictionaryService\DictionaryService.csproj">
       <Project>{34536126-A9CE-4F7E-AF46-C8F307433743}</Project>
       <Name>DictionaryService</Name>

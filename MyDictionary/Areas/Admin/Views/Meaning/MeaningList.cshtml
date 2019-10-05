@@ -6,7 +6,7 @@
         for (int index = 0; index < Model.Count(); index++)
         {
             <p style="overflow:auto">
-                <span>[M] @Model.ElementAt(index).MeaningText</span>
+                <span style="font-size:18px;">[M] @Model.ElementAt(index).MeaningText</span>
                 <div>
                     <a href="/Admin/Meaning/Index?meaningId=@Model.ElementAt(index).MeaningId"
                        target="_blank"
@@ -19,6 +19,8 @@
                             data-toggle="modal"
                             data-target="#meaningModal"
                             data-meaningmodel="@Json.Encode(Model.ElementAt(index))"
+                            data-backdrop="static"
+                            data-keyboard="false"
                             style="font-size: 12px;">
                         Edit
                     </button>
