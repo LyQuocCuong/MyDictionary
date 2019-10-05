@@ -9,9 +9,11 @@ namespace DictionaryDto
     public class WordDto
     {
         public Guid WordId { get; set; }
-        public string Text { get; set; }
-        public string Type { get; set; }
+        public Guid TypeWordId { get; set; }
+        public string WordText { get; set; }
+        public string TypeWordText { get; set; }
         public string Pronounce { get; set; }
+        public string Sound { get; set; }
         public List<MeaningDto> MeaningList { get; set; }
     }
 }

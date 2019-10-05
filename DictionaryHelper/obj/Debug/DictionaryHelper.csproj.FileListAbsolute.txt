@@ -1,0 +1,6 @@
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\bin\Debug\DictionaryHelper.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\bin\Debug\DictionaryHelper.pdb
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\obj\Debug\DictionaryHelper.csprojAssemblyReference.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\obj\Debug\DictionaryHelper.csproj.CoreCompileInputs.cache
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\obj\Debug\DictionaryHelper.dll
+D:\Back Up\Personal Project\MyDictionary\DictionaryHelper\obj\Debug\DictionaryHelper.pdb

@@ -18,5 +18,6 @@ namespace DictionaryEntities.Entity.Context
         public DbSet<WORD> WORD { get; set; }
         public DbSet<MEANING> MEANING { get; set; }
         public DbSet<EXAMPLE> EXAMPLE { get; set; }
+        public DbSet<TYPE_WORD> TYPE_WORD { get; set; }
     }
 }

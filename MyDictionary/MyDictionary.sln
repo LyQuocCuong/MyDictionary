@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryDto", "..\Diction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryService", "..\DictionaryService\DictionaryService.csproj", "{34536126-A9CE-4F7E-AF46-C8F307433743}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryHelper", "..\DictionaryHelper\DictionaryHelper.csproj", "{DBED81CA-47CE-4C8F-AB51-3B54834A3C81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{34536126-A9CE-4F7E-AF46-C8F307433743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34536126-A9CE-4F7E-AF46-C8F307433743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34536126-A9CE-4F7E-AF46-C8F307433743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBED81CA-47CE-4C8F-AB51-3B54834A3C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBED81CA-47CE-4C8F-AB51-3B54834A3C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBED81CA-47CE-4C8F-AB51-3B54834A3C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBED81CA-47CE-4C8F-AB51-3B54834A3C81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,9 @@
         name="btnWordModal"
         data-toggle="modal"
         data-target="#wordModal"
-        data-wordmodel="@Json.Encode(new DictionaryDto.WordDto())">
+        data-wordmodel="@Json.Encode(new DictionaryDto.WordDto())"
+        data-backdrop="static"
+        data-keyboard="false">
     Add Word
 </button>
 @{
@@ -14,8 +16,9 @@
             <thead>
                 <tr>
                     <th style="width:40%">Word</th>
-                    <th style="width:20%">Type</th>
-                    <th style="width:20%">Pronounce</th>
+                    <th style="width:10%">Type</th>
+                    <th style="width:15%">Pronounce</th>
+                    <th style="width:15%">Sound</th>
                     <th style="width:20%">Action</th>
                 </tr>
             </thead>
@@ -23,9 +26,10 @@
                 @for (int index = 0; index < Model.Count; index++)
                 {
                     <tr>
-                        <th class="text-body-table">@Model.ElementAt(index).Text</th>
-                        <th class="text-body-table">@Model.ElementAt(index).Type</th>
+                        <th class="text-body-table">@Model.ElementAt(index).WordText</th>
+                        <th class="text-body-table">@Model.ElementAt(index).TypeWordText</th>
                         <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
+                        <th class="text-body-table">@Model.ElementAt(index).Sound</th>
                         <th>
                             <a href="/Admin/Word/Index?wordId=@Model.ElementAt(index).WordId"
                                target="_blank"
@@ -36,7 +40,9 @@
                                     name="btnWordModal"
                                     data-toggle="modal"
                                     data-target="#wordModal"
-                                    data-wordmodel="@Json.Encode(Model.ElementAt(index))">
+                                    data-wordmodel="@Json.Encode(Model.ElementAt(index))"
+                                    data-backdrop="static"
+                                    data-keyboard="false">
                                 Edit
                             </button>
                             <a href="/Admin/Word/DeleteWord?wordId=@Model.ElementAt(index).WordId"
@@ -58,8 +64,9 @@
     $(document).on("click", "button[name='btnWordModal']", function () {
         var wordModel = $(this).data('wordmodel');
         $("#wordModal input[name='WordId']").val(wordModel.WordId);
-        $("#wordModal input[name='Text']").val(wordModel.Text);
-        $("#wordModal input[name='Type']").val(wordModel.Type);
+        $("#wordModal input[name='WordText']").val(wordModel.WordText);
+        $("#wordModal option[value='" + wordModel.TypeWordId + "']").attr("selected", "selected");
         $("#wordModal input[name='Pronounce']").val(wordModel.Pronounce);
+        $("#wordModal input[name='Sound']").val(wordModel.Sound);
     });
 </script>
