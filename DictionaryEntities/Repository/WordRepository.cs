@@ -1,6 +1,7 @@
 ﻿using DictionaryDto;
 using DictionaryEntities.Entity.Context;
 using DictionaryEntities.Entity.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,9 @@ namespace DictionaryEntities.Repository
 {
     public class WordRepository : AbstractRepository<WORD>
     {
-        public WordRepository(DictionaryRepository repository) : base(repository)
-        {
+        private static readonly ILog Logger = LogManager.GetLogger(typeof(WordRepository));
 
-        }
+        public WordRepository(DictionaryRepository repository) : base(repository) { }
 
         public List<WordDto> GetWordList()
         {
@@ -56,17 +56,25 @@ namespace DictionaryEntities.Repository
 
         public void CreateWord(WordDto wordDto)
         {
-            wordDto.WordId = Guid.NewGuid();
-            WORD newWord = new WORD()
+            try
             {
-                ID = wordDto.WordId,
-                TYPE_WORD_ID = wordDto.TypeWordId,
-                TEXT = wordDto.WordText,
-                PRONOUNCE = wordDto.Pronounce,
-                SOUND = wordDto.Sound,
-            };
-            DataSet.Add(newWord);
-            Repository.SaveChanges();
+                throw new Exception("Ahihi");
+                wordDto.WordId = Guid.NewGuid();
+                WORD newWord = new WORD()
+                {
+                    ID = wordDto.WordId,
+                    TYPE_WORD_ID = wordDto.TypeWordId,
+                    TEXT = wordDto.WordText,
+                    PRONOUNCE = wordDto.Pronounce,
+                    SOUND = wordDto.Sound,
+                };
+                DataSet.Add(newWord);
+                Repository.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                Logger.Error(ex);
+            }
         }
 
         public void UpdateWord(WordDto wordDto)

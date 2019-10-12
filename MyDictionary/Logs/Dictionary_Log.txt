@@ -1,0 +1,2 @@
+2019-10-12 17:19:49,695 [6] ERROR DictionaryEntities.Repository.WordRepository: CreateWord - System.Exception: Ahihi
+   at DictionaryEntities.Repository.WordRepository.CreateWord(WordDto wordDto) in D:\Back Up\Personal Project\MyDictionary\DictionaryEntities\Repository\WordRepository.cs:line 61
