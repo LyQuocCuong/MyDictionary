@@ -9,8 +9,16 @@
         data-keyboard="false">
     Add Meaning
 </button>
-<h2>@Model.WordText <span>[@Model.TypeWordText]</span></h2>
-<h4>@Model.Pronounce</h4>
+<h3>
+    <span>@Model.WordText</span>
+    <span>[@Model.TypeWordText]</span>
+    <span>@Model.Pronounce</span>
+</h3>
+<button class="btn btn-default" onclick="playSound('@Model.WordId')">Play</button>
+<audio controls id="@Model.WordId" hidden>
+    <source src="@Model.Sound" type="audio/mpeg" />
+</audio>
+<hr />4>
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/MeaningList.cshtml", Model.MeaningList); }
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/_MeaningModal.cshtml"); }
 
