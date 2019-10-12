@@ -21,8 +21,13 @@
                     <th class="text-body-table">@Model.ElementAt(index).WordText</th>
                     <th class="text-body-table">@Model.ElementAt(index).TypeWordText</th>
                     <th class="text-body-table">@Model.ElementAt(index).Pronounce</th>
-                    <th class="text-body-table">@Model.ElementAt(index).Sound</th>
-                    <th>
+                    <th class="text-body-table">
+                        <button class="btn btn-default" onclick="playSound('@Model.ElementAt(index).WordId')">Play</button>
+                        <audio controls id="@Model.ElementAt(index).WordId" hidden>
+                            <source src="@Model.ElementAt(index).Sound" type="audio/mpeg" />
+                        </audio>
+                    </th>
+                    <th class="text-body-table">
                         <a href="/Word/Index?wordId=@Model.ElementAt(index).WordId"
                            target="_blank"
                            class="btn btn-info">

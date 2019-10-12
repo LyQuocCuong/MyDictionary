@@ -8,6 +8,10 @@ namespace DictionaryHelper
 {
     public static class CommonVariable
     {
+        public const int y = 10;
+
+        public static readonly int x = 10;
+
         public static readonly TypeWordHelper Type_Word_Verb = new TypeWordHelper()
         {
             Id = Guid.Parse("fde95811-f137-4758-a427-064bb2a29cc8"),
@@ -56,4 +60,5 @@ namespace DictionaryHelper
         };
 
     }
+    
 }
