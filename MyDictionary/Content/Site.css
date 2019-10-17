@@ -39,3 +39,45 @@ table .btn {
 .table-hover > tbody > tr:hover {
     background-color: #424549;
 }
+
+.question-content {
+    text-align: center;
+}
+
+.answer-content {
+    height: 350px;
+    overflow: auto;
+}
+
+.answer-row {
+    padding: 10px;
+    margin: 20px;
+    color: black;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.answer-row:hover {
+    background-color: #E5E5E5;
+}
+
+.answer-text {
+    font-size: 18px;
+    margin: 0px;
+}
+
+.answer-right {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #7FBF7F !important;
+}
+
+.answer-wrong {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #FF7F7F !important;
+}

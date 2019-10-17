@@ -24,6 +24,7 @@ namespace DictionaryEntities.Repository
                 if (DataSet.FirstOrDefault(m => m.WORD_ID == wordId && !m.DELETED && !m.WORD.DELETED) != null)
                 {
                     meaningList.AddRange(DataSet.Where(m => m.WORD_ID == wordId && !m.DELETED && !m.WORD.DELETED)
+                                                .OrderBy(m => m.TEXT)
                                                 .AsEnumerable()
                                                 .Select(m => new MeaningDto()
                                                 {
@@ -97,6 +98,9 @@ namespace DictionaryEntities.Repository
                                     .FirstOrDefault();
             challengeDto.RightAnswerId = rightAnswer.WORD_ID;
             challengeDto.QuestionText = rightAnswer.WORD.TEXT;
+            challengeDto.TypeWordText = rightAnswer.WORD.TYPE_WORD.TYPE_TEXT;
+            challengeDto.Pronounce = rightAnswer.WORD.PRONOUNCE;
+            challengeDto.Sound = rightAnswer.WORD.SOUND;
             challengeDto.AnswersList.Add(new AnswerDto()
             {
                 AnswerId = rightAnswer.WORD_ID,

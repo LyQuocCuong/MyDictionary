@@ -18,6 +18,9 @@ namespace DictionaryDto
         public int MaxLevel { get; set; }
         public Guid RightAnswerId { get; set; }
         public string QuestionText { get; set; }
+        public string TypeWordText { get; set; }
+        public string Pronounce { get; set; }
+        public string Sound { get; set; }
         public List<AnswerDto> AnswersList { get; set; }
         public List<ExampleDto> ExampleList { get; set; }
         public ChallengeDto()

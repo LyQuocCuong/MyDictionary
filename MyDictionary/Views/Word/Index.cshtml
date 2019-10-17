@@ -1,13 +1,13 @@
 ﻿@model DictionaryDto.WordDto
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Model.WordText;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h3>
     <span>@Model.WordText</span>
     <span>[@Model.TypeWordText]</span>
-    <span>@Model.Pronounce</span>
+    <span style="margin-left:15px">/@Model.Pronounce/</span>
 </h3>
 <button class="btn btn-default" onclick="playSound('@Model.WordId')">Play</button>
 <audio controls id="@Model.WordId" hidden>

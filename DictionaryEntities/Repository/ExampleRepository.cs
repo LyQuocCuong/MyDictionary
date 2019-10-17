@@ -22,6 +22,7 @@ namespace DictionaryEntities.Repository
             if (DataSet.FirstOrDefault(e => e.MEANING_ID == meaningId && !e.DELETED && !e.MEANING.DELETED) != null)
             {
                 exampleList.AddRange(DataSet.Where(e => e.MEANING_ID == meaningId && !e.DELETED && !e.MEANING.DELETED)
+                                            .OrderBy(e => e.TEXT)
                                             .Select(example => new ExampleDto()
                                             {
                                                 ExampleId = example.ID,
