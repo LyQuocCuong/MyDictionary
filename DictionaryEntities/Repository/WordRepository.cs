@@ -24,6 +24,7 @@ namespace DictionaryEntities.Repository
                 wordList.AddRange(
                     DataSet
                     .Where(w => !w.DELETED)
+                    .OrderBy(w => w.TEXT)
                     .Select(w => new WordDto()
                     {
                         WordId = w.ID,
@@ -58,7 +59,6 @@ namespace DictionaryEntities.Repository
         {
             try
             {
-                throw new Exception("Ahihi");
                 wordDto.WordId = Guid.NewGuid();
                 WORD newWord = new WORD()
                 {

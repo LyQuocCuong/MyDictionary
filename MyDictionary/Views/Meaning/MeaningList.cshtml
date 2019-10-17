@@ -7,7 +7,7 @@
             @for (int index = 0; index < Model.Count(); index++)
             {
                 <li>
-                    @Model.ElementAt(index).MeaningText
+                    @Html.Raw(Model.ElementAt(index).MeaningText)
                 </li>
                 if (Model.ElementAt(index).ExampleList.Count() > 0)
                 {

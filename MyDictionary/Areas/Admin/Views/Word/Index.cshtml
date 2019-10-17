@@ -12,13 +12,13 @@
 <h3>
     <span>@Model.WordText</span>
     <span>[@Model.TypeWordText]</span>
-    <span>@Model.Pronounce</span>
+    <span style="margin-left:15px">/@Model.Pronounce/</span>
 </h3>
 <button class="btn btn-default" onclick="playSound('@Model.WordId')">Play</button>
 <audio controls id="@Model.WordId" hidden>
     <source src="@Model.Sound" type="audio/mpeg" />
 </audio>
-<hr />4>
+<hr />
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/MeaningList.cshtml", Model.MeaningList); }
 @{ Html.RenderPartial("~/Areas/Admin/Views/Meaning/_MeaningModal.cshtml"); }
 

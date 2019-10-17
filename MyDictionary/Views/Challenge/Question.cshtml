@@ -2,37 +2,53 @@
 <div>
     <form id="newQuestion" action="/Challenge/CreateQuestion" method="post">
         <a onclick="document.getElementById('newQuestion').submit();" class="btn btn-success">New Question</a>
+        <a href="/Word/Index?wordId=@Model.RightAnswerId" target="_blank" class="btn btn-info">Answer</a>
     </form>
     <div>
-        <h2 style="text-align:center">@Model.QuestionText</h2>
-        <div>
-            @for (int index = 0; index < 4; index++)
+        <div class="question-content">
+            <h3>
+                <span>@Model.QuestionText</span>
+                <span>[@Model.TypeWordText]</span>
+            </h3>
+            <span style="margin-right:15px; font-size:18px">/@Model.Pronounce/</span>
+            @if (Model.Sound != null && Model.Sound.Length > 0)
             {
-                <button onclick="checkAnswer(this, '@Model.AnswersList.ElementAt(index).AnswerId')" class="btn btn-lg btn-block btn-default">@Model.AnswersList.ElementAt(index).AnswerText</button>
+                <button class="btn btn-default" onclick="playSound('@Model.RightAnswerId')">Play</button>
+                <audio controls id="@Model.RightAnswerId" hidden>
+                    <source src="@Model.Sound" type="audio/mpeg" />
+                </audio>
             }
         </div>
-    </div>
-    <div style="overflow:auto">
-        <h4>Example:</h4>
-        @if (Model.ExampleList.Count() > 0)
-        {
-            <ul>
-                @for (int index = 0; index < Model.ExampleList.Count(); index++)
-                {
-                    <li>@Model.ExampleList.ElementAt(index).ExampleText</li>
-                }
-            </ul>
-        }
+        <hr />
+        <div class="answer-content">
+            @for (int index = 0; index < 4; index++)
+            {
+                <div class="answer-row" 
+                     onclick="checkAnswer(this, '@Model.AnswersList.ElementAt(index).AnswerId')">
+                    <p class="answer-text">
+                        @Html.Raw(Model.AnswersList.ElementAt(index).AnswerText)
+                    </p>
+                </div>
+                @*<button onclick="checkAnswer(this, '@Model.AnswersList.ElementAt(index).AnswerId')"
+                        class="btn btn-lg btn-block btn-default">
+                    <span>
+                        @Html.Raw(Model.AnswersList.ElementAt(index).AnswerText)
+                    </span>
+                </button>*@
+            }
+        </div>
     </div>
 </div>
 
 <script>
     var rightAnswerId = '@Model.RightAnswerId';
     function checkAnswer(e, answerId) {
-        if (rightAnswerId == answerId) {
-            e.className = "btn btn-lg btn-block btn-success";
-        } else {
-            e.className = "btn btn-lg btn-block btn-danger";
+        if (e.className.indexOf("answer-row") != -1) {
+            if (rightAnswerId == answerId) {
+                e.className = "answer-right";
+            } else {
+                e.className = "answer-wrong";
+            }
         }
     }
 </script>
