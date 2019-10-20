@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #36393e;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -12,7 +12,7 @@
 }
 
 .modal-content {
-    background-color: #36393e;
+    background-color: var(--background-color);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

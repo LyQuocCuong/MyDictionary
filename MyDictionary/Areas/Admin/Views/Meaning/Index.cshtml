@@ -9,7 +9,7 @@
         data-keyboard="false">
     Add Example
 </button>
-<h3>@Model.MeaningText</h3>
+<h3>@Html.Raw(Model.MeaningText)</h3>
 @{ Html.RenderPartial("~/Areas/Admin/Views/Example/ExampleList.cshtml", Model.ExampleList); }
 @{ Html.RenderPartial("~/Areas/Admin/Views/Example/_ExampleModal.cshtml"); }
 
