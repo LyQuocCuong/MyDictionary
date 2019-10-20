@@ -27,7 +27,7 @@
         var model = $(this).data('meaningmodel');
         $("#meaningModal input[name='WordId']").val(model.WordId);
         $("#meaningModal input[name='MeaningId']").val(model.MeaningId);
-        $("#meaningModal textarea[name='MeaningText']").val(model.MeaningText);
+        setValueCKEditor("MeaningText", model.MeaningText);
     });
 </script>
 

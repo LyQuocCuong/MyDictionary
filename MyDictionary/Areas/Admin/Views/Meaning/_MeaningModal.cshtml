@@ -12,11 +12,7 @@
                     <input type="text" name="WordId" hidden />
                     <input type="text" name="MeaningId" hidden />
                     <label for="MeaningText">Meaning Text:</label>
-                    <textarea rows="5" cols="50"
-                              class="form-control"
-                              style="max-width:unset; width:100%;"
-                              name="MeaningText">
-                    </textarea>
+                    @{ Html.RenderPartial("~/Views/Shared/_CKEditor.cshtml", "MeaningText"); }
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Save</button>
