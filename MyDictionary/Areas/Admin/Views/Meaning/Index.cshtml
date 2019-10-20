@@ -18,6 +18,6 @@
         var model = $(this).data('examplemodel');
         $("#exampleModal input[name='MeaningId']").val(model.MeaningId);
         $("#exampleModal input[name='ExampleId']").val(model.ExampleId);
-        $("#exampleModal textarea[name='ExampleText']").val(model.ExampleText);
+        setValueCKEditor("ExampleText", model.ExampleText);
     });
 </script>

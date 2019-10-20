@@ -81,3 +81,7 @@ table .btn {
     color: #000;
     background-color: #FF7F7F !important;
 }
+
+#meaningModal .modal-dialog, #exampleModal .modal-dialog {
+    width: 1000px;
+}
