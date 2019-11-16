@@ -1,0 +1,24 @@
+﻿<!-- Modal -->
+<div id="meaningModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form action="/Admin/Meaning/UpdateMeaning" method="post">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Meaning</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="WordId" hidden />
+                    <input type="text" name="MeaningId" hidden />
+                    <label for="MeaningText">Meaning Text:</label>
+                    @{ Html.RenderPartial("~/Views/Shared/_CKEditor.cshtml", "MeaningText"); }
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button data-dismiss="modal" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
