@@ -1,10 +1,12 @@
 ﻿using DictionaryDto;
 using DictionaryEntities.Entity.Context;
 using DictionaryEntities.Entity.Models;
+using DictionaryHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DictionaryEntities.Repository
@@ -92,42 +94,50 @@ namespace DictionaryEntities.Repository
         public ChallengeDto CreateQuestion()
         {
             ChallengeDto challengeDto = new ChallengeDto();
-            MEANING rightAnswer = Repository.Context.MEANING
-                                    .Where(m => !m.DELETED)
-                                    .OrderBy(r => Guid.NewGuid())
-                                    .FirstOrDefault();
-            challengeDto.RightAnswerId = rightAnswer.WORD_ID;
-            challengeDto.QuestionText = rightAnswer.WORD.TEXT;
-            challengeDto.TypeWordText = rightAnswer.WORD.TYPE_WORD.TYPE_TEXT;
-            challengeDto.Pronounce = rightAnswer.WORD.PRONOUNCE;
-            challengeDto.Sound = rightAnswer.WORD.SOUND;
-            challengeDto.AnswersList.Add(new AnswerDto()
+            Random random = new Random();
+            int indexQuestion = random.Next(0, CommonVariable.Max_Number_Answers);
+            int maxLengthMeaning = DataSet.Where(m => !m.DELETED).Count();
+            string strMeaningId = "";
+
+            //create test
+            while (challengeDto.AnswersList.Count() < CommonVariable.Max_Number_Answers)
             {
-                AnswerId = rightAnswer.WORD_ID,
-                AnswerText = rightAnswer.TEXT,
-            });
-            challengeDto.AnswersList
-                .AddRange(Repository.Context.MEANING
-                                    .Where(m => !m.DELETED && m.WORD_ID != rightAnswer.WORD_ID)
-                                    .OrderBy(r => Guid.NewGuid())
-                                    .Take(3)
-                                    .Select(m => new AnswerDto()
-                                    {
-                                        AnswerId = m.WORD_ID,
-                                        AnswerText = m.TEXT,
-                                    }));
-            if (rightAnswer.EXAMPLE_LIST.FirstOrDefault(e => !e.DELETED) != null)
-            {
-                challengeDto.ExampleList.AddRange(
-                    rightAnswer.EXAMPLE_LIST
-                               .Where(e => !e.DELETED)
-                               .Select(e => new ExampleDto()
-                               {
-                                   ExampleText = e.TEXT
-                               })); ;
+                Thread.Sleep(200);
+                int skipNumber = random.Next(1, maxLengthMeaning);
+                MEANING meaning = DataSet.Where(m => !m.DELETED)
+                                             .OrderBy(m => Guid.NewGuid())
+                                             .Skip(skipNumber)
+                                             .Take(1)
+                                             .FirstOrDefault();
+                if (meaning != null && !strMeaningId.Contains(meaning.ID.ToString()))
+                {
+                    strMeaningId += meaning.ID.ToString() + "-";
+                    if (challengeDto.AnswersList.Count() == indexQuestion)
+                    {
+                        challengeDto.Question.WordId = meaning.WORD_ID;
+                        challengeDto.Question.WordText = meaning.WORD.TEXT;
+                        challengeDto.Question.TypeWordText = meaning.WORD.TYPE_WORD.TYPE_TEXT;
+                        challengeDto.Question.Pronounce = meaning.WORD.PRONOUNCE;
+                        challengeDto.Question.Sound = meaning.WORD.SOUND;
+                    }
+                    challengeDto.AnswersList.Add(new AnswerDto()
+                    {
+                        WordId = meaning.WORD_ID,
+                        MeaningId = meaning.ID,
+                        MeaningText = meaning.TEXT,
+                    });
+                }
             }
-            var rand = new Random();
-            challengeDto.AnswersList.Sort((a, b) => rand.Next(-1, 2));
+
+            //find corrected answer
+            foreach(AnswerDto answerDto in challengeDto.AnswersList)
+            {
+                if (answerDto.WordId == challengeDto.Question.WordId)
+                {
+                    answerDto.IsCorrected = true;
+                }
+            }
+
             return challengeDto;
         }
 

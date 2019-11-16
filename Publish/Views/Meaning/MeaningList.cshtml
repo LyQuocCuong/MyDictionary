@@ -1,0 +1,21 @@
+﻿@model List<DictionaryDto.MeaningDto>
+
+@{ 
+    if (Model.Count() > 0)
+    {
+        <ul type="circle">
+            @for (int index = 0; index < Model.Count(); index++)
+            {
+                <li>
+                    @Html.Raw(Model.ElementAt(index).MeaningText)
+                </li>
+                if (Model.ElementAt(index).ExampleList.Count() > 0)
+                {
+                    <li type="none">
+                        @{ Html.RenderPartial("~/Views/Example/ExampleList.cshtml", Model.ElementAt(index).ExampleList); }
+                    </li>
+                }
+            }
+        </ul>   
+    }
+}

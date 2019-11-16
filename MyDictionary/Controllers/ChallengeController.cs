@@ -21,18 +21,13 @@ namespace MyDictionary.Controllers
         // GET: Challenge
         public ActionResult Index()
         {
-            return View();
+            return View(challengeService.CreateQuestion());
         }
 
         [HttpPost]
         public ActionResult CreateQuestion()
         {
-            return View("Question", challengeService.CreateQuestion());
-        }
-
-        public ActionResult Question(ChallengeDto challengeDto)
-        {
-            return View(challengeDto);
+            return View("Index", challengeService.CreateQuestion());
         }
 
     }

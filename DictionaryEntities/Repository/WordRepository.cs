@@ -64,7 +64,7 @@ namespace DictionaryEntities.Repository
                 {
                     ID = wordDto.WordId,
                     TYPE_WORD_ID = wordDto.TypeWordId,
-                    TEXT = wordDto.WordText,
+                    TEXT = wordDto.WordText.Trim(),
                     PRONOUNCE = wordDto.Pronounce,
                     SOUND = wordDto.Sound,
                 };
@@ -83,7 +83,7 @@ namespace DictionaryEntities.Repository
             if (word != null)
             {
                 word.TYPE_WORD_ID = wordDto.TypeWordId;
-                word.TEXT = wordDto.WordText;
+                word.TEXT = wordDto.WordText.Trim();
                 word.PRONOUNCE = wordDto.Pronounce;
                 word.SOUND = wordDto.Sound;
                 Repository.SaveChanges();

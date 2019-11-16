@@ -526,6 +526,7 @@
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\.idea\ckeditor-releases.iml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\styles.js" />
     <Content Include="Scripts\ckeditor\vendor\promise.js" />
@@ -556,12 +557,8 @@
     <Content Include="Views\Word\Index.cshtml" />
     <Content Include="Views\Meaning\MeaningList.cshtml" />
     <Content Include="Views\Word\WordList.cshtml" />
-    <Content Include="Views\Meaning\Index.cshtml" />
-    <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\Example\ExampleList.cshtml" />
     <Content Include="Views\Challenge\Index.cshtml" />
-    <Content Include="Views\Challenge\Question.cshtml" />
-    <Content Include="Views\Challenge\_ChallengeModal.cshtml" />
     <Content Include="Views\Shared\_CKEditor.cshtml" />
   </ItemGroup>
   <ItemGroup>
