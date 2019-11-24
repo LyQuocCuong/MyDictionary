@@ -23,7 +23,9 @@ namespace MyDictionary
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
-                      "~/Scripts/ckeditor/ckeditor.js"));
+                      "~/Scripts/ckeditor/ckeditor.js",
+                      "~/Scripts/ckeditor/config.js",
+                      "~/Scripts/ckeditor/styles.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                       "~/Scripts/common.js"));
