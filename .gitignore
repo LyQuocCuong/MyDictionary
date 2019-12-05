@@ -1577,3 +1577,6 @@
 /MyDictionary.Tests/obj/Release/MyDictionary.Tests.pdb
 /MyDictionary/obj/Release/*.cache
 /MyDictionary/obj/Release/Package/PackageTmp
+/DictionaryEntities/obj/Debug/build.force
+/DictionaryService/obj/Debug/build.force
+/MyDictionary/obj/Debug/build.force
