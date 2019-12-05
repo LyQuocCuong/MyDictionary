@@ -25,9 +25,10 @@ namespace MyDictionary.Areas.Admin.Controllers
             return View(wordService.FindDetailWord(wordId));
         }
 
-        public ActionResult WordList(int pageNumber = 1)
+        public ActionResult WordList(string textSearch, int pageNumber = 1)
         {
-            return View(wordService.GetWordList().ToPagedList(pageNumber, CommonVariable.Page_Size));
+            ViewBag.TextSearch = textSearch;
+            return View(wordService.GetWordList(textSearch).ToPagedList(pageNumber, CommonVariable.Page_Size));
         }
 
         public ActionResult UpdateWord(WordDto wordDto)

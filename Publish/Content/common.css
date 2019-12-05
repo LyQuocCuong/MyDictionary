@@ -6,7 +6,7 @@
 }
 
 body {
-    margin:15px 0px;
+    /*margin:15px 0px;*/
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -17,14 +17,14 @@ body {
 }
 
 .body-content {
-    height: 500px;
+    height: 550px;
     overflow: auto;
     padding-left: 15px;
     padding-right: 15px;
 }
 
 .body-footer {
-    height: 60px;
+    height: 45px;
     overflow: auto;
 }
 
@@ -44,6 +44,7 @@ body {
 
 .text-footer {
     text-align: right;
+    margin: 0px;
 }
 
 .modal-content {
@@ -60,7 +61,7 @@ body {
 }
 
 .text-body-table {
-    padding: 15px !important;
+    padding: 7px !important;
     font-weight: normal;
 }
 
@@ -106,5 +107,18 @@ table .btn {
 }
 
 th.text-body-table {
-    font-size: 18px;
+    font-size: 15px;
+}
+
+.body-content .pagination-container {
+    text-align: right;
+}
+
+.body-content .pagination {
+    margin: 5px 0px;
+}
+
+.body-content table {
+    margin: 0px;
+    height: 500px;
 }

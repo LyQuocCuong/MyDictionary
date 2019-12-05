@@ -7,7 +7,7 @@
             @for (int index = 0; index < Model.Count(); index++)
             {
                 <li style="padding-top: 10px; padding-bottom: 10px;">
-                    @Html.Raw(Model.ElementAt(index).ExampleText)
+                    <span style="font-size:16px;">@Html.Raw(Model.ElementAt(index).ExampleText)</span>
                 </li>
             }
         </ul>

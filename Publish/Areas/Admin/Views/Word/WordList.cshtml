@@ -1,20 +1,37 @@
-﻿@model List<DictionaryDto.WordDto>
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<DictionaryDto.WordDto>
 
 <div class="body-header">
-    <button class="btn btn-success"
-            name="btnWordModal"
-            data-toggle="modal"
-            data-target="#wordModal"
-            data-wordmodel="@Json.Encode(new DictionaryDto.WordDto())"
-            data-backdrop="static"
-            data-keyboard="false">
-        Add Word
-    </button>
+    <div class="row" style="padding: 0px; margin: 0px; margin-top: 10px;">
+        <div class="col-lg-8 col-md-8 col-xs-8">
+            <a href="/Home/Index" class="btn btn-danger">Home</a>
+            <button class="btn btn-success"
+                    name="btnWordModal"
+                    data-toggle="modal"
+                    data-target="#wordModal"
+                    data-wordmodel="@Json.Encode(new DictionaryDto.WordDto())"
+                    data-backdrop="static"
+                    data-keyboard="false">
+                Add Word
+            </button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-4">
+            @using (Html.BeginForm("WordList", "Word", FormMethod.Get))
+            {
+                <div class="col-lg-4 col-md-4 col-xs-4" style="text-align: right;">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-8" style="padding: 0px;">
+                    <input type="text" class="form-control" name="textSearch" value="@ViewBag.TextSearch" />
+                </div>
+            }
+        </div>
+    </div>
 </div>
-@{
-    if (Model.Count > 0)
-    {
-        <div class="body-content">
+<div class="body-content">
+    @{
+        if (Model.Count > 0)
+        {
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -43,8 +60,8 @@
                             </th>
                             <th class="text-body-table">
                                 <a href="/Admin/Word/Index?wordId=@Model.ElementAt(index).WordId"
-                                   target="_blank"
-                                   class="btn btn-info">
+                                    target="_blank"
+                                    class="btn btn-info">
                                     Detail
                                 </a>
                                 <button class="btn btn-primary"
@@ -57,8 +74,8 @@
                                     Edit
                                 </button>
                                 <a href="/Admin/Word/DeleteWord?wordId=@Model.ElementAt(index).WordId"
-                                   onclick="return confirm('Are you sure ?')"
-                                   class="btn btn-danger">
+                                    onclick="return confirm('Are you sure ?')"
+                                    class="btn btn-danger">
                                     Delete
                                 </a>
                             </th>
@@ -66,9 +83,14 @@
                     }
                 </tbody>
             </table>
-        </div>
+            @Html.PagedListPager(Model, pageNumber => Url.Action("WordList", "Word", new { pageNumber, @textSearch = @ViewBag.TextSearch }))
+        }
+        else
+        {
+            <h3>No Result.</h3>
+        }
     }
-}
+</div>
 
 @{ Html.RenderPartial("~/Areas/Admin/Views/Word/_WordModal.cshtml"); }
 

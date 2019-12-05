@@ -9,7 +9,7 @@ namespace DictionaryService.IService
 {
     public interface IWordService
     {
-        List<WordDto> GetWordList();
+        List<WordDto> GetWordList(string textSearch);
         WordDto FindDetailWord(Guid wordId);
         void CreateWord(WordDto wordDto);
         void UpdateWord(WordDto wordDto);
