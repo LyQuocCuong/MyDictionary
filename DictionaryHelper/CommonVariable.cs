@@ -8,6 +8,8 @@ namespace DictionaryHelper
 {
     public static class CommonVariable
     {
+        public static readonly byte Page_Size = 10;
+
         public static readonly byte Max_Number_Answers = 6;
 
         public static readonly TypeWordHelper Type_Word_Verb = new TypeWordHelper()

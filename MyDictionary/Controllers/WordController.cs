@@ -1,6 +1,8 @@
 ﻿using DictionaryDto;
+using DictionaryHelper;
 using DictionaryService.IService;
 using DictionaryService.Service;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +26,9 @@ namespace MyDictionary.Controllers
             return View(wordService.FindDetailWord(wordId));
         }
 
-        public ActionResult WordList()
+        public ActionResult WordList(int pageNumber = 1)
         {
-            return View(wordService.GetWordList());
+            return View(wordService.GetWordList().ToPagedList(pageNumber, CommonVariable.Page_Size));
         }
 
     }

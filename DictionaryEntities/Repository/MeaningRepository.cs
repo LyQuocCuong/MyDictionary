@@ -2,6 +2,7 @@
 using DictionaryEntities.Entity.Context;
 using DictionaryEntities.Entity.Models;
 using DictionaryHelper;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace DictionaryEntities.Repository
 {
     public class MeaningRepository : AbstractRepository<MEANING>
     {
+        private static readonly ILog Logger = LogManager.GetLogger(typeof(MeaningRepository));
+
         public MeaningRepository(DictionaryRepository repository) : base(repository)
         {
 
@@ -41,7 +44,7 @@ namespace DictionaryEntities.Repository
             }
             catch(Exception ex)
             {
-
+                Logger.Error("Application Error " + ex);
             }
             return meaningList;
         }
@@ -61,14 +64,21 @@ namespace DictionaryEntities.Repository
 
         public void CreateMeaning(MeaningDto meaningDto)
         {
-            MEANING newMeaning = new MEANING()
+            try
             {
-                ID = Guid.NewGuid(),
-                WORD_ID = meaningDto.WordId,
-                TEXT = meaningDto.MeaningText,
-            };
-            DataSet.Add(newMeaning);
-            Repository.SaveChanges();
+                MEANING newMeaning = new MEANING()
+                {
+                    ID = Guid.NewGuid(),
+                    WORD_ID = meaningDto.WordId,
+                    TEXT = meaningDto.MeaningText,
+                };
+                DataSet.Add(newMeaning);
+                Repository.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                Logger.Error("Application Error " + ex);
+            }
         }
 
         public void UpdateMeaning(MeaningDto meaningDto)

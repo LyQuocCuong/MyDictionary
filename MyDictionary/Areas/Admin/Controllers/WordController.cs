@@ -1,4 +1,5 @@
 ﻿using DictionaryDto;
+using DictionaryHelper;
 using DictionaryService.IService;
 using DictionaryService.Service;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MyDictionary.Areas.Admin.Controllers
 {
@@ -23,9 +25,9 @@ namespace MyDictionary.Areas.Admin.Controllers
             return View(wordService.FindDetailWord(wordId));
         }
 
-        public ActionResult WordList()
+        public ActionResult WordList(int pageNumber = 1)
         {
-            return View(wordService.GetWordList());
+            return View(wordService.GetWordList().ToPagedList(pageNumber, CommonVariable.Page_Size));
         }
 
         public ActionResult UpdateWord(WordDto wordDto)
