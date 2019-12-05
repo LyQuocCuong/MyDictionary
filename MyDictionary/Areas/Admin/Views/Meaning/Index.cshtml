@@ -12,7 +12,8 @@
     </button>
 </div>
 <div class="body-content">
-    <h3>@Html.Raw(Model.MeaningText)</h3>
+    <h3><u>@Html.Raw(Model.MeaningText)</u></h3>
+    <hr />
     @{ Html.RenderPartial("~/Areas/Admin/Views/Example/ExampleList.cshtml", Model.ExampleList); }
     @{ Html.RenderPartial("~/Areas/Admin/Views/Example/_ExampleModal.cshtml"); }
 </div>

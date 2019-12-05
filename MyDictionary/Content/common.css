@@ -60,7 +60,7 @@ body {
 }
 
 .text-body-table {
-    padding: 15px !important;
+    padding: 8px !important;
     font-weight: normal;
 }
 
@@ -106,5 +106,19 @@ table .btn {
 }
 
 th.text-body-table {
-    font-size: 18px;
+    font-size: 15px;
+}
+
+#wordlist #addword {
+    margin: 12px;
+}
+
+#wordlist .pagination-container {
+    text-align: right;
+    float: right;
+    margin: 5px;
+}
+
+#wordlist .pagination {
+    margin: 5px 10px 5px 0px;
 }
