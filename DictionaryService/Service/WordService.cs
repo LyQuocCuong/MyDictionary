@@ -11,11 +11,11 @@ namespace DictionaryService.Service
 {
     public class WordService : IWordService
     {
-        public List<WordDto> GetWordList()
+        public List<WordDto> GetWordList(string textSearch)
         {
             using (DictionaryRepository repository = new DictionaryRepository())
             {
-                return repository.WORD.GetWordList();
+                return repository.WORD.GetWordList(textSearch);
             }
         }
         

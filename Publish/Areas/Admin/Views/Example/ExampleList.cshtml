@@ -5,8 +5,8 @@
     {
         for (int index = 0; index < Model.Count(); index++)
         {
-            <p style="overflow:auto">
-                <span style="font-size:18px;">@Html.Raw(Model.ElementAt(index).ExampleText)</span>
+            <div style="overflow:auto">
+                <span class="text-content">@Html.Raw(Model.ElementAt(index).ExampleText)</span>
                 <div style="font-size:12px;">
                     <button class="btn btn-primary"
                             name="btnExampleModal"
@@ -23,7 +23,7 @@
                         Delete
                     </a>
                 </div>
-            </p>
+            </div>
             <hr />
         }
     }

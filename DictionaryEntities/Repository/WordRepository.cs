@@ -18,14 +18,14 @@ namespace DictionaryEntities.Repository
 
         public WordRepository(DictionaryRepository repository) : base(repository) { }
 
-        public List<WordDto> GetWordList()
+        public List<WordDto> GetWordList(string textSearch)
         {
             List<WordDto> wordList = new List<WordDto>();
             if (DataSet.FirstOrDefault(w => !w.DELETED) != null)
             {
                 wordList.AddRange(
                     DataSet
-                    .Where(w => !w.DELETED)
+                    .Where(w => !w.DELETED && (!string.IsNullOrEmpty(textSearch) ? w.TEXT.Contains(textSearch) : true))
                     .OrderBy(w => w.TEXT)
                     .Select(w => new WordDto()
                     {
